@@ -889,6 +889,23 @@ class MWSClient
     }
 
     /**
+     * Returns the feed processing list.
+     * @return array
+     * @throws Exception
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function GetFeedSubmissionList()
+    {
+        $result = $this->request('GetFeedSubmissionList', [
+        ]);
+        if (isset($result['Message']['ProcessingReport'])) {
+            return $result['Message']['ProcessingReport'];
+        } else {
+            return $result;
+        }
+    }
+
+    /**
      * Uploads a feed for processing by Amazon MWS.
      * @param string $FeedType (http://docs.developer.amazonservices.com/en_US/feeds/Feeds_FeedType.html)
      * @param mixed $feedContent Array will be converted to xml using https://github.com/spatie/array-to-xml. Strings will not be modified.
