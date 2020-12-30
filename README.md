@@ -12,7 +12,7 @@ Interaction with the Amazon Api for vendors called MWS
 },
 "repositories": [
     {
-        "name": "productsupcom/amazon-mws",
+        "name": "mws/amazon-mws",
         "type": "git",
         "url": "git@github.com:productsupcom/amazon-mws.git"
     }
